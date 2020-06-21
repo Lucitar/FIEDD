@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- links css -->
+
+      <!--GOOGLE ICONS-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--FONT AWESOME ICONS-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- MATERIALIZE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- CUSTOM CSS PROF -->
+        <link rel="stylesheet" type="text/css" href="css/custom_prof.css">
+
+        <link rel="stylesheet" href="./containers/header.css">
+        <link rel="stylesheet" href="./containers/conteudo.css">
+        <!--
+        <link rel="stylesheet" href="./reset/normalize.css">
+        <link rel="stylesheet" href="./containers/grid.css">
+        
+        <link rel="stylesheet" href="./containers/nav.css">
+        -->
+        <!-- JQUERY JS -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- MATERIALIZE JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          
+    <link rel="icon" href="./img/fav.png ">
+    <title>Fiedd - Área de Upload</title>
+  </head>
+  <body>
+
+    <%- menuprof %>
+
+      <header class="header box effect">
+        <h1 style="color: white;">Área de Upload</h1>
+      </header>
+  <section class="container_form">
+    <div class="container">
+    <form action="/dashboard_professor/upload" method="POST" name="upload" enctype="multipart/form-data">
+        <h3>Selecione a série alvo:</h3>
+        <select name="turma" class="select">
+          <option value="1" selected>1º ano</option> 
+          <option value="2">2º ano</option>
+          <option value="3">3º ano</option>
+        </select>
+        <!--
+        <h3>Selecione o bimestre do arquivo:</h3>
+        <select name="bimestre" class="select">
+          <option value="1" selected>1º bimestre</option> 
+          <option value="2">2º bimestre</option>
+          <option value="3">3º bimestre</option>
+          <option value="4">4º bimestre</option>
+        </select>
+        -->
+        <br>
+        
+
+      <div class="file-field input-field">
+        <div class="btn" style="background-color: #2dc7d0;">
+          <span style="color: white;">FILE</span>
+          <input type="file" name="arquivo" >
+        </div>
+      
+        <div class="file-path-wrapper">
+          <input type="text" class="file-path">
+        </div>
+      </div>
+
+      <input type="submit" name="botao" class="btn right" style="background-color: #2dc7d0;">
+      <div class="clearfix"></div>
+      </form> 
+    </div>
+
+    <table class="content-table">
+    <thead>
+      <tr>
+        <th colspan="4">Arquivos Disponíveis Para Download</th>
+      </tr>
+
+    </thead>
+      <%for(let cont = 0; cont < lista.length; cont++){%>
+    <tbody>
+      <tr>
+        <form action="/dashboard_professor/download_arq" method="POST">
+          <input type="hidden" id="original" name="original" value="<%= lista[cont].nomeoriginal %>">
+          <input type="hidden" id="armazenado" name="armazenado" value="<%= lista[cont].nomearmazenado %>">
+          <td width="600"><%= lista[cont].nomeoriginal %></td>
+          <td><%= lista[cont].turma %> º ano</td>
+          <td><input type="submit" class="submit" name="" value="Download"></td>
+        </form>
+        <form action="/dashboard_professor/excluir_arq" method="POST">
+        <input type="hidden" id="original" name="original" value="<%= lista[cont].nomeoriginal %>">
+        <input type="hidden" id="armazenado" name="armazenado" value="<%= lista[cont].nomearmazenado %>">
+        <td><input type="submit" class="submit" name="" value="Excluir"></td>
+        </form>
+      <%}%>
+    </tbody>
+    
+  </table>
+      
+     </section>
+
+     <!-- FIM DA SERVIÇOS SECTION -->
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- MATERIALIZE JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      //MENU MOBILE
+      $(".button-collapse").sideNav();
+    </script>
+    
+  </body>
+</html>
+

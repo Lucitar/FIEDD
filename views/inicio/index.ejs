@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<HTML lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIEDD</title>
+    <link rel="icon" href="inicio/img/fav.png ">
+
+    <!--GOOGLE ICONS-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--FONT AWESOME ICONS-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- MATERIALIZE CSS -->
+    <link rel="stylesheet" href="inicio/css/materialize.min.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="inicio/css/custom.css">
+  </head>
+
+
+  <body>
+
+  <header>
+
+    <!-- MENU MOBILE -->
+
+        
+        <ul class="side-nav" id="menu-mobile">
+          
+          <li><a href="#home" style="color: white;">Home</a></li>
+          <li><a href="#sobre" style="color: white;">Sobre</a></li>
+          <li><a href="#servicos" style="color: white;">Serviços</a></li>
+          <li><a href="#linguagens" style="color: white;">Linguagens</a></li>
+          <li><a href="#contato" style="color: white;">Contato</a></li>
+          <li><a href="#login-professor" class="modal-trigger" style="color: white;">Login (Professor)</a></li>
+          <li><a href="#login-aluno" class="modal-trigger" style="color: white;">Login (Aluno)</a></li>
+        </ul>
+      
+    <!--MENU DESKTOP-->
+    <div class="navbar-fixed">
+    <nav class="navbar z-depth-0" >
+      <div class="nav-wrapper container">
+        <h1 class="logo_text">Projeto Fiedd</h1>
+        <a href="#"><img src="inicio/img/fav.png" class="logo_img"></a>
+
+        <ul class="right light hide-on-med-and-down" style="margin-top: 15px;" >
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#linguagens">Linguagens</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#login-professor" class="modal-trigger">Login (Professor)</a></li>
+          <li><a href="#login-aluno" class="modal-trigger">Login (Aluno)</a></li>
+        </ul>
+
+        
+
+
+        <a href="#"  data-activates="menu-mobile" class="button-collapse right" ><i class="material-icons">menu</i></a> 
+
+      </div>
+    </nav>
+    </div>
+  </header>
+
+        <!--MODAL DO BOTAO LOGIN PROFESSOR-->
+        <div class="modal" id="login-professor">
+          <div class="modal-content">
+            <div class="formulario white black-text">
+            <h4 class="center">Area do Professor</h4>
+            <p class="light center">Utilize seu cpf e senha para acessar sua conta e desfrutar das funcionalidades proporcionadas pelo sistema FIEDD.</p>
+
+            
+            <form action="/auth_func" method="post">
+
+              <div class="input-field">
+                <input type="text" name="cpf" id="name">
+                <label for="name">CPF</label>
+              </div>
+
+              <div class="input-field">
+                <input type="password" name="password" id="email">
+                <label for="email">Senha</label>
+              </div>
+              
+              <button class="btn blue_logo" type="submit" name="btn-entrar">Entrar</button>
+              
+            </form>
+          </div>
+          </div>
+            
+          <div class="modal-footer">
+            <a class="btn blue_logo modal-action modal-close">Sair</a>
+          </div>
+        </div>
+
+        <!--MODAL DO BOTAO LOGIN ALUNO-->
+        <div class="modal" id="login-aluno">
+          <div class="modal-content">
+            <div class="formulario white black-text">
+            <h4 class="center">Area do Aluno</h4>
+            <p class="light center">Utilize sua matricula e senha para acessar sua conta e desfrutar das funcionalidades proporcionadas pelo sistema FIEDD.</p>
+
+            <form action="/auth_aluno" method="post">
+
+              <div class="input-field">
+                <input type="text" name="matricula" id="name">
+                <label for="name">Matricula</label>
+              </div>
+
+              <div class="input-field">
+                <input type="password" name="password" id="email">
+                <label for="email">Senha</label>
+              </div>
+              
+              <button class="btn blue_logo" type="submit" name="btn-entrar1">Entrar</button>
+              
+            </form>
+          </div>
+          </div>
+            
+          <div class="modal-footer">
+            <a class="btn blue_logo modal-action modal-close">Sair</a>
+          </div>
+        </div>
+    
+    <!-- HOME SECTION -->
+    <section class="home bloco scrollspy" id="home">
+      <div class="row container banner">
+        <div class=" col s12 center">
+          <h2 class="white-text">Projeto FIEDD</h2>
+          <h3 class="white-text">Feira de Ciências</h3>
+          <p class="p1 white-text light">FIEDD é um projeto desenvolvido por um grupo de alunos da turma de Redes de Computadores (2º Ano) que tem como objetivo levar alunos e professores a um contato cada vez mais próximo dentro deste avanço tecnológico a qual estamos cada vez mais inseridos. Diante disso, o presente trabalho irá buscar por meio de ferramentas, integrar a comunicação e construção do conhecimento, visando a otimização do mesmo. <br><br></p>
+          <div class="row botoes">
+            <a href="#sobre" class="btn btn-large blue_logo">Projeto</a>
+            <a href="#depoimentos" class="btn btn-large white black-text">Membros</a>
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!--FIM DA HOME SECTION -->
+
+
+    <!--SECTION SOBRE-->
+    <section class="sobre bloco-sobre scrollspy" id="sobre">
+      <div class="row container">
+        <div class="col s12 center">
+          <h2>Sobre</h2>
+        </div>
+
+        <div class="p2 col s12 l6">
+          <p class="light">O Projeto FIEDD se iniciou com a ideia de fazer alguma ferramenta que ajudasse a EEEP Juarez Távora de alguma forma. No início, tivemos várias ideias: almoxarifado, sistema de chat, cadastro etc. Desenvolvemos um meio alternativo de ajudar na interação entre professores, alunos e gestão em prol de uma melhor comunicação entre estes. Nosso objetivo é facilitar o convívio e entre docentes e discentes e organizar o empréstimo e devolução de diversos produtos pertencentes a escola.</p>
+        </div>
+
+      <div class="col s12 l6">
+        <div class="carousel carousel-slider" data-indicators="true">
+          <a href="#" class="carousel-item">
+            <img src="inicio/img/banner-01.jpg">
+          </a>
+
+          <a href="#" class="carousel-item">
+            <img src="inicio/img/banner-02.jpg">
+          </a>
+
+          <a href="#" class="carousel-item">
+            <img src="inicio/img/banner-03.jpg">
+          </a>
+        </div>
+      </div>
+      </div>
+      <!--
+      <div class="row blue_logo missao-visao-valores">
+        <div class="container">
+          <article class="col s12 m4 center">
+            <span class="icon"><i class="material-icons large">directions_run</i></span>
+            <h3 class="light">Missão</h3>
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ante neque, dapibus hendrerit felis vel, lacinia varius mauris. Praesent nec elit vitae nisi ultrices imperdiet non nec est. Mauris molestie magna ac orci cursus, quis iaculis erat gravida. Etiam a orci ante. Vivamus a imperdiet massa. Suspendisse ornare ac turpis in tempor. Duis pharetra libero diam, id pellentesque tellus venenatis porttitor. Etiam porta faucibus sapien id volutpat.</p>
+          </article>
+
+          <article class="col s12 m4 center">
+            <span class="icon"><i class="material-icons large">remove_red_eye</i></span>
+            <h3 class="light">Visão</h3>
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ante neque, dapibus hendrerit felis vel, lacinia varius mauris. Praesent nec elit vitae nisi ultrices imperdiet non nec est. Mauris molestie magna ac orci cursus, quis iaculis erat gravida. Etiam a orci ante. Vivamus a imperdiet massa. Suspendisse ornare ac turpis in tempor. Duis pharetra libero diam, id pellentesque tellus venenatis porttitor. Etiam porta faucibus sapien id volutpat.</p>
+          </article>
+
+          <article class="col s12 m4 center">
+            <span class="icon"><i class="material-icons large">star</i></span>
+            <h3 class="light">Valores</h3>
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ante neque, dapibus hendrerit felis vel, lacinia varius mauris. Praesent nec elit vitae nisi ultrices imperdiet non nec est. Mauris molestie magna ac orci cursus, quis iaculis erat gravida. Etiam a orci ante. Vivamus a imperdiet massa. Suspendisse ornare ac turpis in tempor. Duis pharetra libero diam, id pellentesque tellus venenatis porttitor. Etiam porta faucibus sapien id volutpat.</p>
+          </article>
+
+        </div>
+      </div>
+      --->
+    </section>
+    <!--FIM DA SECTION SOBRE-->
+      
+
+    <!-- SERVICOS SECTION -->
+    <section class="servicos bloco scrollspy" id="servicos">
+      <div class="row container center">
+        <div class="col s12">
+          <h2 class="light">Serviços</h2>
+          <p class="light" style="text-align: center;">A plataforma FIEDD possui várias funções que possibilitam  auxiliar professor/aluno por meio de ferramentas práticas e facilmente utilizáveis.</p>
+        </div>
+      </div>
+
+
+      <div class="row container">
+
+        <!--PILATES-->
+        <article class="col s12 m6 l4">
+          <div class="card">
+
+            <!--IMAGEM E BOTAO DO CARD-->
+            <div class="card-image">
+              <img src="inicio/img/pilates.jpg" class="materialboxed">
+              <a href="#pilates-modal" class="btn btn-floating halfway-fab blue_logo modal-trigger">
+                <i class="material-icons">more_horiz</i>
+              </a>
+            </div>
+
+            <!--TEXTO DO CARD-->
+            <div class="card-content">
+              <h3 class="card-title center">Sistema de Arquivos</h3>
+              <p class="light">É utilizada para fazer o download/upload de arquivos por professores com a finalidade de tornar as atividades mais práticas e acessíveis.</p>
+            </div>
+
+          </div>
+        </article>
+        <!--PILATES MODAL (vou fazer so esse mesmo kkkkkkk)-->
+        <!--
+        <div id="pilates-modal" class="modal">
+
+          <div class="modal-content">
+            <h5 class="light">O que e pilates</h5>
+            <p class="light black-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ante neque, dapibus hendrerit felis vel, lacinia varius mauris. Praesent nec elit vitae nisi ultrices imperdiet non nec est.</p>
+            <h5 class="light">Quais os beneficios</h5>
+            <ul class="collection">
+              <li class="collection-item">Item</li>
+              <li class="collection-item">Item</li>
+              <li class="collection-item">Item</li>
+              <li class="collection-item">Item</li>
+              <li class="collection-item  ">Item</li>
+            </ul>
+          </div>
+
+          <div class="modal-footer">
+            <a class="btn blue_logo modal-action modal-close">Sair</a>
+          </div>
+
+        </div>
+        -->
+
+        <!--NUTRIÇAO-->
+        <article class="col s12 m6 l4">
+          <div class="card">
+
+            <!--IMAGEM E BOTAO DO CARD-->
+            <div class="card-image">
+              <img src="inicio/img/nutricao.jpg" class="materialboxed">
+              <a href="#" class="btn btn-floating halfway-fab blue_logo">
+                <i class="material-icons">more_horiz</i>
+              </a>
+            </div>
+
+            <!--TEXTO DO CARD-->
+            <div class="card-content">
+              <h3 class="card-title center">Sistema de Chat</h3>
+              <p class="light">Utilizado por todos os usuários que necessitam de atendimento (alunos/professores) com uma comunicação veloz.</p>
+            </div>
+
+          </div>
+        </article>
+
+        <!--FISIOTERAPIA-->
+        <article class="col s12 m6 l4">
+          <div class="card">
+
+            <!--IMAGEM E BOTAO DO CARD-->
+            <div class="card-image">
+              <img src="inicio/img/fisioterapia.jpg" class="materialboxed">
+              <a href="#" class="btn btn-floating halfway-fab blue_logo">
+                <i class="material-icons">more_horiz</i>
+              </a>
+            </div>
+
+            <!--TEXTO DO CARD-->
+            <div class="card-content">
+              <h3 class="card-title center">Ouvidoria</h3>
+              <p class="light">A ouvidoria possui a finalidade de atender a todas sugestões, críticas ou duvidas que venham para a coordenação.</p>
+            </div>
+
+          </div>
+        </article>
+
+        
+
+<!--
+        
+        <div class="row center btn-horario">
+          <a href="#modal-horario" class="btn btn-large blue_logo modal-trigger"><i class="material-icons right">timer</i> Quadro de horarios</a>
+        </div>
+
+        
+        <div class="modal" id="modal-horario">
+          <div class="modal-content">
+            <h5 class="light">Quadro de Horarios</h5>
+
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#tabela-pilates">Pilates</a></li>
+              <li class="tab col s3"><a href="#tabela-musculacao">Musculação</a></li>
+              <li class="tab col s3"><a href="#tabela-fitness">Fitness</a></li>
+              <li class="tab col s3"><a href="#tabela-artes-marciais">Artes Marciais</a></li> 
+            </ul>
+
+            
+        <table class="striped responsive-table" id="tabela-pilates">
+
+          <thead>
+            <tr>
+              <th></th>
+              <th>Segunda</th>
+              <th>Terça</th>
+              <th>Quarta</th>
+              <th>Quinta</th>
+              <th>Sexta</th>
+              <th>Sábado</th>
+              <th>Domingo</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>6:00 às 10:00</td>
+              <td>Pilates</td>
+              <td></td>
+              <td>Pilates</td>
+              <td></td>
+              <td>Pilates</td>
+              <td>Pilates</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>12:00 às 22:00</td>
+              <td>Musculação</td>
+              <td></td>
+              <td>Musculação</td>
+              <td>Musculação</td>
+              <td></td>
+              <td></td>
+              <td>Musculação</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+-->
+        
+
+      </div>
+    </section>
+    <!--FIM DA SERVICOS SECTION -->
+
+    <!-- INICIO PROFESSOR COORDENADOR -->
+    <section class="coordenador bloco-coord scrollspy" id="coordenador">
+      <div class="row container">
+        <div class="col s12 center">
+          <h2 class="titulo black-text light">Coordenador</h2>
+        </div>
+
+        <div class="col s12 center" style="padding-top: 20px;">
+          <img src="inicio/img/andre.png" class="circle responsive-img" style="width: 15%;">
+           <h4 class="light black-text">André Luiz</h4>
+          <p class="col s12"><strong>André Luiz Gonçalves. Professor e Coordenador de cursos e projetos da EEEP Juarez Távora.</strong></p>
+        </div>        
+      </div>
+    </section>
+    <!-- FIM PROFESSOR COORDENADOR -->
+
+    <!--DEPOIMENTOS SECTION-->
+    <section class="depoimentos scrollspy" id="depoimentos">
+      <div class="depoimentos blue_logo">
+        <div class="row container">
+          <div class="col s12 center">
+            <h2 class="titulo white-text light">Membros</h2>
+          </div>
+
+          <div class="col s12 m4 center">
+            <img src="inicio/img/depo1.jpg" class="circle responsive-img">
+            
+            <h4 class="light white-text">Alice Lopes</h4>
+            <p class="white-text">
+              Coordenadora de Serviços e Testadora
+            </p>
+          </div>
+
+          <div class="col s12 m4 center">
+            <img src="inicio/img/depo2.jpg" class="circle responsive-img">
+            
+            <h4 class="light white-text">Gabriel Alexandre</h4>
+            <p class="white-text">
+              Desenvolvedor Mobile e Programador
+            </p>
+          </div>
+
+          <div class="col s12 m4 center">
+            <img src="inicio/img/depo3.jpg" class="circle responsive-img">
+            
+            <h4 class="light white-text">Lucas Ferreira</h4>
+            <p class="white-text">
+              Designer e Programador
+            </p>
+          </div>
+
+          <div class="col s12 m4 l6 center">
+            <img src="inicio/img/depo4.jpg" class="circle responsive-img">
+            
+            <h4 class="light white-text">Victor Lucio</h4>
+            <p class="white-text">
+              Desenvolvedor Web, Mobile e Programador
+            </p>
+          </div>
+
+          <div class="col s12 m4 l6 center">
+            <img src="inicio/img/depo5.jpg" class="circle responsive-img">
+            
+            <h4 class="light white-text">Yohane Cavalcante</h4>
+            <p class="white-text">
+              Coordenadora de Pesquisas Externas e Testadora
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--FIM DA DEPOIMENTOS SECTION-->
+
+
+    <!--linguagens SECTION-->
+    <section class="linguagens bloco scrollspy" id="linguagens">
+      <div class="row container center">
+        <div class="col s12 center">
+          <h2 class="light">Linguagens Utilizadas</h2>
+          <p class="light">Para desenvolver o site, foi necessária a utilização de algumas linguagens. A seguir, você pode encontrar conceitos e funções para cada linguagem. Caso queira aprender como manuseá-las, basta clicar em alguma delas que você entrará em uma página onde há um curso online para cada uma.</p>
+        </div>
+      </div>
+    
+      <div class="row container">
+        
+        <!--Belo Horizonte-->
+        <article class="col s12 l6">
+          <div class="card horizontal">
+
+            <div class="card-image">
+              <img src="inicio/img/html5.PNG">
+            </div>
+
+            <div class="card-stacked">
+              <div class="card-content">
+                <h3 class="card-title light">HTML5</h3>
+                <p class="light">
+                  HTML5 (Hypertext Markup Language, versão 5) é uma linguagem de marcação para a World Wide Web e é uma tecnologia chave da Internet, originalmente proposto por Opera Software.É a quinta versão da linguagem HTML.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!--Salvador-->
+        <article class="col s12 l6">
+          <div class="card horizontal">
+
+            <div class="card-image">
+              <img src="inicio/img/css3.PNG">
+            </div>
+
+            <div class="card-stacked">
+              <div class="card-content">
+                <h3 class="card-title light">CSS3</h3>
+                <p class="light">
+                  O Cascading Style Sheets (CSS) é uma linguagem utilizada para definir a apresentação (aparência) de documentos que adotam para o seu desenvolvimento linguagens de marcação (como XML, HTML e XHTML e etc..).
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!--São Paulo-->
+        <article class="col s12 l6">
+          <div class="card horizontal">
+
+            <div class="card-image">
+              <img src="inicio/img/javascript.PNG">
+            </div>
+
+            <div class="card-stacked">
+              <div class="card-content">
+                <h3 class="card-title light">Javascript</h3>
+                <p class="light">
+                  JavaScript, é uma linguagem de programação interpretada de alto nível, caracterizada também, como dinâmica, fracamente tipificada, prototype-based e multi-paradigma.
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </article>
+
+        <!--Rio de janeiro-->
+        <article class="col s12 l6">
+          <div class="card horizontal">
+
+            <div class="card-image">
+              <img src="inicio/img/mysql.PNG">
+            </div>
+
+            <div class="card-stacked">
+              <div class="card-content">
+                <h3 class="card-title light">MySQL</h3>
+                <p class="light">
+                  O MySQL é um sistema de gerenciamento de banco de dados (SGBD), que utiliza a linguagem SQL (Linguagem de Consulta Estruturada, do inglês Structured Query Language) como interface
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+    <!--FIM DA linguagens SECTION -->
+
+    <!--CONTATO SECTION-->
+    <section class="contato bloco scrollspy" id="contato">
+      <div class="row container">
+        <div class="col s12 center">
+          <h2 class="titulo light">Contato</h2>
+        </div>
+
+        <!-- <div class="col s12 m6 l4">
+          <div class="mapa transparent">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d709.8085740275889!2d-38.5312139!3d-3.7517575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7ea23633def3c32c!2sEEEP+Juarez+T%C3%A1vora!5e1!3m2!1spt-BR!2sbr!4v1566077311710!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div> -->
+
+        <div class="col s12 m6 l4">
+          <div class="informacoes white-text">
+            <h4>Redes Sociais</h4>
+            <p class="light">Caso queira ver mais sobre como desenvolvemos o projeto, as ideias que foram sugeridas, as etapas passo a passo ou até mesmo um curso online de linguagens de programação, temos perfil em várias redes sociais disponibilizando tudo isso! Você pode acessar a nossa página do Facebook, Gmail ou Twitter apenas clicando em um dos botões abaixo.</p>
+            <a href="#" class="btn-floating blue_logo"><i class="fa fa-facebook"></i>Facebook</a>
+            <a href="#" class="btn-floating blue_logo"><i class="fa fa-google"></i>Google</a>
+            <a href="#" class="btn-floating blue_logo"><i class="fa fa-twitter"></i>Twitter</a>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+          <div class="formulario white black-text">
+            <h4>Fale conosco</h4>
+            <p class="light">Se você tiver alguma dúvida, reclamação ou sugestão, é possível contactá-nos preenchendo os campos abaixo e digitando sua mensagem. Enviaremos uma resposta por e-mail o quanto antes.</p>
+
+            <form action="" method="post">
+
+              <div class="input-field">
+                <input type="text" name="name" id="name">
+                <label for="name">Seu nome</label>
+              </div>
+
+              <div class="input-field">
+                <input type="email" name="email" id="email">
+                <label for="email">Seu email</label>
+              </div>
+              
+              <div class="input-field">
+                <input type="text" name="subject" id="subject">
+                <label for="subject">Assunto</label>
+              </div>
+
+              <div class="input-field">
+                <textarea id="message" class="materialize-textarea"></textarea>
+                <label for="message">Mensagem</label>
+              </div>
+
+              <button class="btn blue_logo" type="submit">Enviar</button>
+              
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!--FIM DA CONTATO SECTION -->
+
+
+    
+
+    <!--RODAPÉ-->
+    <footer class="rodape">
+      <div class="row container center">
+        <p class="light white-text">© Fiedd 2019 - Todos os Direitos Reservados</p>
+      </div>
+    </footer>
+
+
+
+
+    
+    
+    
+    <!-- MUITO IMPORTANTEEEEEE! O JQUERY DEVE ESTAR ACIMA DO MATERIALIZE JS E POR ULTIMO O SCRIPT DO MATERIALIZE (COMO SEGUE ABAIXO) SENÃO O SCRIPT NÃO FUNCIONAAAAAAAAAA -->
+    
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- MATERIALIZE JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+     <!-- JAVASCRIPT -->
+
+     <!--INICIALIZAÇÃO-->
+     <script>
+      //MENU MOBILE
+      $(".button-collapse").sideNav();
+      //LINK INTERNO
+      $(".scrollspy").scrollSpy({
+        scrollOffset: 0
+      })
+      //CAROUSEL
+        $('.carousel.carousel-slider').carousel({
+          fullWidth: true
+        });
+        //MODAL
+        $(".modal").modal();
+        //TABS
+        $("ul.tabs").tabs();
+    </script>
+
+     <!--ADICIONANDO NAVCOLOR AO ROLAR-->
+    <script>
+      
+      $(window).on("scroll", function(){
+        if($(window).scrollTop() > 100) {
+          $(".navbar").addClass("nav-color");
+        } else {
+          $(".navbar").removeClass("nav-color");
+        }
+
+      });
+
+    </script>
+    
+
+  </body>
+
+
+
+</HTML>

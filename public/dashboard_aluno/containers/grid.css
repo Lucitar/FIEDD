@@ -1,0 +1,21 @@
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 15%  1fr ;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: 'nav header' 'nav conteudo' 'nav conteudo'
+}
+
+.header{
+  grid-area: header;
+}
+.nav {
+    grid-area: nav;
+}
+.conteudo {
+    grid-area: conteudo;
+}
+
+.user {
+	align-content: center;
+}

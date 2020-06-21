@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- links css -->
+
+      <!--GOOGLE ICONS-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--FONT AWESOME ICONS-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- MATERIALIZE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- CUSTOM CSS PROF -->
+        <link rel="stylesheet" type="text/css" href="css/custom_aluno.css">
+        <link rel="stylesheet" type="text/css" href="css/style_aluno.css">
+
+        <link rel="stylesheet" href="./containers/header.css">
+        <link rel="stylesheet" href="./containers/conteudo.css">
+        <!--
+        <link rel="stylesheet" href="./reset/normalize.css">
+        <link rel="stylesheet" href="./containers/grid.css">
+        
+        <link rel="stylesheet" href="./containers/nav.css">
+        -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script>
+          $(document).ready(function(){
+            $(".divisoes").click(function(){
+              $(this).find(".tabela").toggle();
+              $(this).find(".neto").toggle();
+            });
+            
+            
+          }); 
+        </script>
+        <style type="text/css">
+          .tabela {text-decoration: none; color:#000; display: none;}
+          .neto{text-decoration: none; color:#000; display: none;}
+          .divisoes{text-decoration: none; color: #05f;}
+        </style>
+
+    <link rel="icon" href="./img/fav.png ">
+    <title>Fiedd - Área de Estudos</title>
+  </head>
+  <body>
+
+    <%- menualuno %>
+
+      <header class="header box effect">
+        <h1 style="color: white;">Área de Sugestões</h1>
+      </header>
+  <section class="container_form">
+    
+  
+      
+      <form action="/dashboard_aluno/recomendacoes_aluno_buscar" method="POST">
+      <h3>Selecione o assunto da mensagem:</h3>
+        <select name="tipo" class="select">
+          <option value="Livros" selected>Livros</option> 
+          <option value="Filmes">Filmes</option>
+          <option value="Séries">Séries</option>
+          <option value="Documentários">Documentários</option>
+          <option value="Sites/Links">Sites/Links</option>
+          <option value="Outros">Outros</option>
+          <option value="Tudo">Tudo</option>
+        </select>
+        <input type="submit" name="Pesquisar" class="submit" value="Pesquisar">
+      </form>
+
+
+
+      <div class="divisoes">
+        <h4 class="disciplina">1º Ano do Ensino Médio</h4>
+
+        <div class="tabela">
+      <table class="content-table">
+    <thead>
+      <tr>
+        <th>Sugestão</th>
+        <th>Comentário do Professor</th>
+        <th>Tipo</th>
+        <th>Disciplina</th>
+        <th>Data de Envio</th>
+      </tr>
+    </thead>
+      <%for(let cont = 0; cont < lista.length; cont++){%>
+        <% if(lista[cont].serie == '1'){%>
+    <tbody>
+      <tr>
+        <input type="hidden" id="id" name="id" value="<%= lista[cont].id %>">
+        <td width="200"><%= lista[cont].nome_sugestao %></td>
+        <td width="500"><%= lista[cont].comentario_sugestao %></td>
+        <td><%= lista[cont].tipo_sugestao %></td>
+        <td><%= lista[cont].disciplina %></td>
+        <td><%= dateFormat(lista[cont].data_de_envio ,"dd/mm/yyyy hh:MM:ss TT");%></td>
+      </tr>
+        <%}%>
+      <%}%>
+    </tbody>
+    
+  </table>
+      </div>
+    </div>
+
+
+    <div class="divisoes">
+      <h4 class="disciplina">2º Ano do Ensino Médio</h4>
+        <div class="tabela">
+      <table class="content-table">
+    <thead>
+      <tr>
+        <th>Sugestão</th>
+        <th>Comentário do Professor</th>
+        <th>Tipo</th>
+        <th>Disciplina</th>
+        <th>Data de Envio</th>
+      </tr>
+    </thead>
+      <%for(let cont = 0; cont < lista.length; cont++){%>
+      <% if(lista[cont].serie == '2'){%>
+    <tbody>
+      <tr>
+        <input type="hidden" id="id" name="id" value="<%= lista[cont].id %>">
+        <td width="200"><%= lista[cont].nome_sugestao %></td>
+        <td width="500"><%= lista[cont].comentario_sugestao %></td>
+        <td><%= lista[cont].tipo_sugestao %></td>
+        <td><%= lista[cont].disciplina %></td>
+        <td><%= dateFormat(lista[cont].data_de_envio ,"dd/mm/yyyy hh:MM:ss TT");%></td>
+      </tr>
+        <%}%>
+      <%}%>
+    </tbody>
+    
+  </table>
+      </div>
+    </div>
+
+
+    <div class="divisoes">
+      <h4 class="disciplina">3º Ano do Ensino Médio</h4>
+        <div class="tabela">
+      <table class="content-table">
+    <thead>
+      <tr>
+        <th>Sugestão</th>
+        <th>Comentário do Professor</th>
+        <th>Tipo</th>
+        <th>Disciplina</th>
+        <th>Data de Envio</th>
+      </tr>
+    </thead>
+      <%for(let cont = 0; cont < lista.length; cont++){%>
+      <% if(lista[cont].serie == '3'){%>
+    <tbody>
+      <tr>
+        <input type="hidden" id="id" name="id" value="<%= lista[cont].id %>">
+        <td width="200"><%= lista[cont].nome_sugestao %></td>
+        <td width="500"><%= lista[cont].comentario_sugestao %></td>
+        <td><%= lista[cont].tipo_sugestao %></td>
+        <td><%= lista[cont].disciplina %></td>
+        <td><%= dateFormat(lista[cont].data_de_envio ,"dd/mm/yyyy hh:MM:ss TT");%></td>
+      </tr>
+        <%}%>
+      <%}%>
+    </tbody>
+    
+  </table>
+      </div>
+    </div>
+
+
+
+     
+     </section>
+
+     <!-- FIM DA SERVIÇOS SECTION -->
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- MATERIALIZE JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      //MENU MOBILE
+      $(".button-collapse").sideNav();
+    </script>
+    
+  </body>
+</html>

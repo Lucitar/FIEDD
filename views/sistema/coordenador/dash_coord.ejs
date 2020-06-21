@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiedd - Pagina Inicial</title>
+    <link rel="icon" href="./img/fav.png ">
+
+        <!--GOOGLE ICONS-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--FONT AWESOME ICONS-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- MATERIALIZE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- CUSTOM CSS PROF -->
+        <link rel="stylesheet" type="text/css" href="css/custom_coord.css">
+
+
+</head>
+<body>
+
+
+
+<!-- MENU -->
+<%- menucoord %>
+<!-- SERVIÇOS SECTION -->
+
+<section class="services">
+  <div class="container services">
+
+    <div class="row">
+
+      <div class="col s12 m6 l3 center-align">
+          <div class="card medium">
+            <div class="card-content ">
+              <i class="material-icons large">add_circle</i>
+              <h5>Cadastro de Produtos</h5>
+              <p>
+              </p>
+            </div>
+            <div class="card-action"><a href="/almoxarifado/cadastro"><span>Acessar</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l3 center-align">
+          <div class="card medium">
+            <div class="card-content ">
+              <i class="material-icons large">list</i>
+              <h5>Lista de Produtos</h5>
+              <p>
+              </p>
+            </div>
+            <div class="card-action"><a href="/almoxarifado/lista"><span>Acessar</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l3 center-align">
+          <div class="card medium">
+            <div class="card-content ">
+              <i class="material-icons large">update</i>
+              <h5>Atualização de Produtos</h5>
+              <p>
+              </p>
+            </div>
+            <div class="card-action"><a href="/almoxarifado/atualizar"><span>Acessar</span></a>
+            </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l3 center-align">
+          <div class="card medium">
+            <div class="card-content ">
+              <i class="material-icons large">delete_forever</i>
+              <h5>Exclusão de Produtos</h5>
+              <p>
+              </p>
+            </div>
+            <div class="card-action"><a href="/almoxarifado/excluir"><span>Acessar</span></a>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- FIM DA SERVIÇOS SECTION -->
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- MATERIALIZE JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      //MENU MOBILE
+      $(".button-collapse").sideNav();
+    </script>
+
+</body>
+</html>

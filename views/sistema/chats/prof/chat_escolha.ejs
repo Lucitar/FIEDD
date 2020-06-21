@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- links css -->
+
+      <!--GOOGLE ICONS-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--FONT AWESOME ICONS-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- MATERIALIZE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- CUSTOM CSS PROF -->
+        <link rel="stylesheet" type="text/css" href="css/custom_prof.css">
+        <!--
+        <link rel="stylesheet" type="text/css" href="css/style.css">-->
+
+        <link rel="stylesheet" href="./containers/header.css">
+        <link rel="stylesheet" href="./containers/conteudo.css">
+        <!--
+        <link rel="stylesheet" href="./reset/normalize.css">
+        <link rel="stylesheet" href="./containers/grid.css">
+        
+        <link rel="stylesheet" href="./containers/nav.css">
+        -->
+
+    <link rel="icon" href="./img/fav.png ">
+    <title>Fiedd - Área de Chat - Redes</title>
+  </head>
+  <body>
+
+
+    <%- menuprof %>
+
+      <header class="header box effect">
+        <h1 style="color: white;">Chat - Escolha</h1>
+      </header>
+
+  <section class="container_form">
+
+    <form method="POST" action="/dashboard_professor/chat_entrar" style="color: #ffffff;">
+        <h3 class="rowRadio" >Selecione o chat de uma turma:</h3>
+
+        <div class="rowRadio rd">
+        <input type="radio" name="escolha" value="administracao" id="administracao">
+        <label for="administracao" style="color: #ffffff;">Administração</label>
+        </div>
+
+        <div class="rowRadio rd">
+        <input type="radio" name="escolha" value="automacao" id="automacao">
+        <label for="automacao" style="color: #ffffff;">Automação</label>
+        </div>
+
+        <div class="rowRadio rd">
+        <input type="radio" name="escolha" value="edificacoes" id="edificacoes">
+        <label for="edificacoes" style="color: #ffffff;">Edificações</label>
+        </div>
+
+        <div class="rowRadio rd">
+        <input type="radio" name="escolha" value="massoterapia" id="massoterapia">
+        <label for="massoterapia" style="color: #ffffff;">Massoterapia</label>
+        </div>
+
+        <div class="rowRadio rd">
+        <input type="radio" name="escolha" value="redes" id="redes">
+        <label for="redes" style="color: #ffffff;">Redes</label>
+        </div>
+        
+        <div class="rowRadio rd">
+          <input type="submit" value="Enviar" class="submit"> 
+        </div>
+      </form>
+
+     </section>
+
+     <!-- FIM DA SERVIÇOS SECTION -->
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- MATERIALIZE JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      //MENU MOBILE
+      $(".button-collapse").sideNav();
+    </script>
+
+    
+  </body>
+</html>

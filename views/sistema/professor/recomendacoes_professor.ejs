@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- links css -->
+
+      <!--GOOGLE ICONS-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--FONT AWESOME ICONS-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- MATERIALIZE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- CUSTOM CSS PROF -->
+        <link rel="stylesheet" type="text/css" href="css/custom_prof.css">
+        <link rel="stylesheet" type="text/css" href="css/style_ouvidoria.css">
+
+        <link rel="stylesheet" href="./containers/header.css">
+        <link rel="stylesheet" href="./containers/conteudo.css">
+        <!--
+        <link rel="stylesheet" href="./reset/normalize.css">
+        <link rel="stylesheet" href="./containers/grid.css">
+        
+        <link rel="stylesheet" href="./containers/nav.css">
+        -->
+
+    <link rel="icon" href="./img/fav.png ">
+    <title>Fiedd - Área de Estudos</title>
+  </head>
+  <body>
+
+    <%- menuprof %>
+
+      <header class="header box effect">
+        <h1 style="color: #fff;">Área de Sugestões</h1>
+      </header>
+  <section class="container_form">
+      
+      <form action="/dashboard_professor/recomendacoes_professor_enviar" method="POST">
+        <h3>Selecione a série alvo:</h3>
+        <select name="serie" class="select">
+          <option value="1" selected>1º ano</option> 
+          <option value="2">2º ano</option>
+          <option value="3">3º ano</option>
+        </select>
+        <br>
+        <h3>Selecione o tipo:</h3>
+        <select name="tipo" class="select">
+          <option value="Livros" selected>Livro</option> 
+          <option value="Filmes">Filme</option>
+          <option value="Séries">Série</option>
+          <option value="Documentários">Documentário</option>
+          <option value="Sites/Links">Link/Site</option>
+          <option value="Outros">Outros</option>
+        </select>
+        <br>
+        <h3>Insira uma nova sugestão:</h3>
+
+        <input type="text" id="" name="sugestao" placeholder="Sugestão para os Alunos" value="" required autocomplete="off">
+        <textarea name="comentario" placeholder="Digite comentários e informações extra aqui..."></textarea>
+        <input type="submit" name="Pesquisar" class="submit" value="Enviar">
+
+      </form> 
+
+
+      <table class="content-table">
+    <thead>
+      <tr>
+        <th>Sugestão</th>
+        <th>Comentário do Professor</th>
+        <th>Tipo</th>
+        <th>Série</th>
+        <th>Data de Envio</th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+      <%for(let cont = 0; cont < lista.length; cont++){%>
+    <tbody>
+      <form action="/dashboard_professor/recomendacoes_professor_excluir" method="POST">
+      <tr>
+        <input type="hidden" id="id" name="id" value="<%= lista[cont].id %>">
+        <td width="200"><%= lista[cont].nome_sugestao %></td>
+        <td width="500"><%= lista[cont].comentario_sugestao %></td>
+        <td><%= lista[cont].tipo_sugestao %></td>
+        <td><%= lista[cont].serie %>º</td>
+        <td><%= dateFormat(lista[cont].data_de_envio ,"dd/mm/yyyy hh:MM:ss TT");%></td>
+        <td><input type="submit" class="submit" name="" value="Excluir"></td>
+      </tr>
+    </form>
+      <%}%>
+    </tbody>
+    
+  </table>
+  
+    
+     </section>
+
+     <!-- FIM DA SERVIÇOS SECTION -->
+    <!-- JQUERY JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- MATERIALIZE JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      //MENU MOBILE
+      $(".button-collapse").sideNav();
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- links css -->
+        <link rel="stylesheet" href="../sistem/reset/normalize.css">
+        <link rel="stylesheet" href="../sistem/containers/grid.css">
+        <link rel="stylesheet" href="../sistem/containers/header.css">
+        <link rel="stylesheet" href="../sistem/containers/nav.css">
+        <link rel="stylesheet" href="../sistem/containers/conteudo.css">
+    <title>Almotech</title>
+  </head>
+  <body>
+
+    <main class="conteudo">
+		<table>
+		<%for(let cont = 0; cont < 5, cont++){%>
+			<tr>
+				<th>Segunda</th>
+				<%for(cont2 = 0; cont < 9; cont2++)%>
+					<td><%= horario[cont].aula1%></td>
+				<%}%>
+			</tr>
+		
+		
+		<%}%>
+		</table>
+    </main>
+
+
+      <header class="header">
+        <h1>Cadastro de Produtos</h1>
+      </header>
+
+    <div class="nav">
+            <h1>AlmoTech aluno</h1>
+			<a class="container-title">
+				<img src="../home/img/iconelogo.png" alt="Icone Usuario">
+				<%= nome %> 
+            </a>
+
+			<nav class="nav-menu">
+				<ul class="nav-list">
+					<li class="nav-links"><a href="/horario">Horario</a></li>
+					<li class="nav-links"><a href="/newCad">Cadastros</a></li>
+          <li class="nav-links"><a href="/entradaProd">Entrada de Produtos</a></li>
+          <li class="nav-links"><a href="/saidaProd">Saida de Produtos</a></li>
+					<li class="nav-links"><a href="/sair">Sair</a></li>
+				</ul>
+			</nav>
+
+	</div>
+
+        <script type="text/javascript">
+            (function(){
+              const btn = document.querySelector(".submit").addEventListener("click",function(){
+                alert("Produto Cadastrado.")
+              })
+            })()
+        </script>
+  </body>
+</html>
